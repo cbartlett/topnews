@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.4.3'
 
 gem 'byebug', platforms: [:mri, :mingw, :x64_mingw], group: [:development, :test]
 gem 'capybara', '~> 2.13', group: [:development, :test]
