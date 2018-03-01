@@ -1,0 +1,51 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://hacker-news.firebaseio.com/v0/askstories.json?print=pretty
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - hacker-news.firebaseio.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Thu, 01 Mar 2018 22:52:23 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '563'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - no-cache
+      Strict-Transport-Security:
+      - max-age=31556926; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: "[ 16492994, 16495718, 16491152, 16496609, 16492393, 16493322, 16494663,
+        16492996, 16482392, 16491295, 16494024, 16486606, 16493158, 16493015, 16492539,
+        16477752, 16483055, 16482351, 16465762, 16488250, 16484666, 16485671, 16464909,
+        16485352, 16490211, 16471998, 16487560, 16480705, 16472320, 16482044, 16479401,
+        16469067, 16478553, 16464528, 16491083, 16472197, 16470699, 16453227, 16481637,
+        16479497, 16479453, 16478569, 16457005, 16456004, 16447690, 16455486, 16475623,
+        16468239, 16482650, 16454268, 16460040, 16455991, 16458242, 16479922, 16457923,
+        16461846 ]\n"
+    http_version: 
+  recorded_at: Thu, 01 Mar 2018 22:52:23 GMT
+recorded_with: VCR 4.0.0

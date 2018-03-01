@@ -3,9 +3,9 @@ require 'capybara/rspec'
 require 'vcr'
 
 VCR.configure do |c|
-    c.cassette_library_dir = 'spec/vcr'
-      c.hook_into :webmock
-        c.default_cassette_options = { record: :new_episodes, erb: true }
+  c.cassette_library_dir = 'spec/vcr'
+  c.hook_into :webmock
+  c.default_cassette_options = { record: :new_episodes, erb: true }
 end
 
 WebMock.disable_net_connect!(allow_localhost: true)
