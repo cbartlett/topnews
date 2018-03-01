@@ -24,6 +24,7 @@ gem 'web-console', '>= 3.3.0', group: :development
 gem 'webpacker'
 
 group :test, :developement do
+  gem 'dotenv'
   gem 'rspec-rails'
   gem 'webmock'
   gem 'vcr'
