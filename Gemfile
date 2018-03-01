@@ -26,4 +26,5 @@ gem 'webpacker'
 group :test, :developement do
   gem 'rspec-rails'
   gem 'webmock'
+  gem 'vcr'
 end
