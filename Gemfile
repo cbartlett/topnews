@@ -27,6 +27,10 @@ gem 'webpacker'
 group :test, :developement do
   gem 'dotenv'
   gem 'rspec-rails'
-  gem 'webmock'
+end
+
+group :test do
+  gem 'shoulda-matchers'
   gem 'vcr'
+  gem 'webmock'
 end
