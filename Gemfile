@@ -13,6 +13,7 @@ gem 'pry-rails'
 gem 'puma', '~> 3.7'
 gem 'rails', '~> 5.1.5'
 gem 'react-rails'
+gem 'rest-client'
 gem 'sass-rails', '~> 5.0'
 gem 'selenium-webdriver', group: [:development, :test]
 gem 'spring', group: :development
