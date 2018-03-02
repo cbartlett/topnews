@@ -90,6 +90,7 @@ GEM
       temple (>= 0.8.0)
       tilt
     hashdiff (0.3.7)
+    htmlentities (4.3.4)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
     i18n (0.9.5)
@@ -266,6 +267,7 @@ DEPENDENCIES
   devise
   dotenv
   haml
+  htmlentities
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
   pg (>= 0.18, < 2.0)

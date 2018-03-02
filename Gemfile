@@ -6,6 +6,7 @@ gem 'capybara', '~> 2.13', group: [:development, :test]
 gem 'coffee-rails', '~> 4.2'
 gem 'devise'
 gem 'haml'
+gem 'htmlentities'
 gem 'jbuilder', '~> 2.5'
 gem 'listen', '>= 3.0.5', '< 3.2', group: :development
 gem 'pg', '>= 0.18', '< 2.0'
