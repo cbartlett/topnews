@@ -5,4 +5,4 @@
 - else
   = link_to 'Login', new_user_session_path
 
-= @stories
+#story_data{data: @stories.to_json}

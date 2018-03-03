@@ -22,6 +22,6 @@ class NewsFetcher
   end
 
   def display_stories
-    parsed_story.map { |parsed| { title: HTMLEntities.new.decode(parsed["title"]), text: HTMLEntities.new.decode(parsed["text"]) } }
+    parsed_story.map { |parsed| { title: Nokogiri::HTML.parse(parsed["title"]).text, text: Nokogiri::HTML.parse(parsed["text"]).text } }
   end
 end
