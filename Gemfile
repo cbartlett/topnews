@@ -25,6 +25,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'uglifier', '>= 1.3.0'
 gem 'web-console', '>= 3.3.0', group: :development
 gem 'webpacker'
+gem 'webpacker-react', "~> 0.3.2"
 
 group :test, :developement do
   gem 'dotenv'
