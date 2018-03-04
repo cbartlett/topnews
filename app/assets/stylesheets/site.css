@@ -1,0 +1,17 @@
+.starred {
+  width: 30px;
+  height: 12px;
+  background-image: url("star.jpeg");
+  padding-bottom: 15px;
+}
+
+.unstarred {
+  width: 30px;
+  height: 11px;
+  background-image: url("unstarred.jpeg");
+  padding-bottom: 16px;
+}
+
+.hidden {
+  display: none;
+}
