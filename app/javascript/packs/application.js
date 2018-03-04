@@ -9,5 +9,6 @@
 
 // Support component names relative to this directory:
 import WebpackerReact from 'webpacker-react'
+import StarredStories from './starred_stories'
 import StoryListings from './story_listings'
-WebpackerReact.setup({StoryListings})
+WebpackerReact.setup({StoryListings, StarredStories})
