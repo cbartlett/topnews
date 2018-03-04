@@ -8,6 +8,7 @@ gem 'devise'
 gem 'haml'
 gem 'htmlentities'
 gem 'jbuilder', '~> 2.5'
+gem 'jquery-rails'
 gem 'listen', '>= 3.0.5', '< 3.2', group: :development
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'pry-rails'
