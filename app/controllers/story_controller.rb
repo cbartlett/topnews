@@ -14,7 +14,7 @@ class StoryController < ApplicationController
   end
 
   def starred
-    @starred_stories = NewsFetcher.new(current_user).starred_stories
+    @starred_stories = StarredStories.new().fetch
     render react_component: 'StarredStories', props: { starred_stories: @starred_stories, current_user: current_user}
   end
 
