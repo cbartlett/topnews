@@ -30,6 +30,7 @@ gem 'webpacker-react', "~> 0.3.2"
 group :test, :developement do
   gem 'dotenv'
   gem 'rspec-rails'
+  gem 'factory_bot_rails'
 end
 
 group :test do

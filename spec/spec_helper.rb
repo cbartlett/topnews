@@ -2,6 +2,7 @@ require 'webmock/rspec'
 require 'capybara/rspec'
 require 'vcr'
 require 'support/vcr'
+require 'factory_bot'
 
 WebMock.disable_net_connect!(allow_localhost: true)
 
