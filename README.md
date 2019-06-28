@@ -22,4 +22,3 @@ When a team member signs in, they will see recent news stories and be able to st
 * As an internal tool for a small team, performance optimization is not a requirement.
 * Be prepared to discuss known performance shortcomings of your solution and potential improvements.
 * UX design here is of little importance. The design can be minimal or it can have zero design at all.
-* Since our production stack uses React heavily, your solution should utilize React as part of the minimal front end.
