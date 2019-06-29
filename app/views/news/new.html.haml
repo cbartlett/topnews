@@ -1,0 +1,27 @@
+.container
+	%h3 Starred Stories
+	- @news_all.each do |story|
+		.card
+			.card-body
+				%p= story.news_id
+				%h3= story.title
+				=link_to "Read the story", story.url
+			.card-stars
+				%p 
+					Stars: #{story.votes_for.size}
+				%p
+					Starred by: #{@starred_by[story.id]}
+				- if !story.votes_for.up.by_type(User).voters.include? current_user
+					= render partial: "form", locals: {story: story}
+
+.container
+	%h3 Top 5 Stories from Hacker News
+	- @stories.each do |story|
+		.card
+			.card-body
+				%p= story["id"]
+				%h3= story["title"]
+				=link_to "Read the story", story["url"]
+			.card-stars
+				= render partial: "form", locals: {story: story}
+						

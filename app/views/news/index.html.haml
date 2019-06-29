@@ -1,0 +1,9 @@
+- @news.each do |news|
+  .card
+    .card-body
+      %p= news.news_id
+      %h3= news.title
+      =link_to news.url
+    .card-stars
+      %p
+        Starred by: #{@starred_by[news.id]} 

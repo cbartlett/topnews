@@ -9,4 +9,14 @@
   %body
     %p.notice= notice
     %p.alert= alert
-    = yield
+    .container
+      .menu
+        %h1 Welcome to Top News
+        - if user_signed_in?
+          %h2 
+            Hello, #{current_user.first_name} #{current_user.last_name}
+            = link_to "Sign Out", destroy_user_session_path, method: :delete, class: 'btn btn-danger'
+        - else
+          = link_to "Sign In", new_user_session_path, class: 'btn btn-primary'
+    %section.container    
+      = yield

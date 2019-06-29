@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :news
   devise_for :users
-  root to: 'pages#home'
+  root to: 'news#new'
 end

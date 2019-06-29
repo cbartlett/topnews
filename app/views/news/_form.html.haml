@@ -1,0 +1,5 @@
+= form_for @news do |f|
+  = f.hidden_field :news_id, value: story["id"]
+  = f.hidden_field :title, value: story["title"]
+  = f.hidden_field :url, value: story["url"]
+  = f.submit "Star the story"

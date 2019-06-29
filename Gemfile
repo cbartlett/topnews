@@ -21,3 +21,8 @@ gem 'turbolinks', '~> 5'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'uglifier', '>= 1.3.0'
 gem 'web-console', '>= 3.3.0', group: :development
+
+gem 'rest-client'
+gem 'bootstrap-sass', '~> 3.4.1'
+gem 'sassc-rails', '>= 2.1.0'
+gem 'acts_as_votable', '~> 0.12.0'
