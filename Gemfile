@@ -10,7 +10,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'listen', '>= 3.0.5', '< 3.2', group: :development
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'pry-rails'
-gem 'puma', '~> 3.7'
+gem 'puma', '~> 3.12'
 gem 'rails', '~> 5.1.5'
 gem 'rspec-rails'
 gem 'sass-rails', '~> 5.0'
