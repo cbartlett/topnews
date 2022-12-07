@@ -10,9 +10,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2018_02_28_212101) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_07_222813) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "feed_fetches", force: :cascade do |t|
+    t.json "ids"
+    t.boolean "in_progress"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "stories", force: :cascade do |t|
+    t.text "title"
+    t.bigint "remote_id"
+    t.integer "descendents"
+    t.json "kids"
+    t.integer "score"
+    t.datetime "remote_timestamp", precision: nil
+    t.text "remote_type"
+    t.text "url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.text "author"
+  end
+
+  create_table "user_stories", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "story_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "first_name"
