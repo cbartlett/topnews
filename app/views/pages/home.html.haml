@@ -1,1 +1,36 @@
 %h1 Welcome to Top News
+
+- if @refetched
+  Hold tight! We're fetching your info
+
+%h2 Watched stories
+- if @watched_stories
+  %table
+    %thead
+      %th Title
+      %th Score
+      %th Following
+    %tbody
+      - @watched_stories.each do |story|
+        %tr
+          %td= link_to(story.title, story.url)
+          %td= story.score
+          %td= story.users.collect { |u| u.email }
+
+%h2 All stories
+- if @latest
+  %table
+    %thead
+      %th Title
+      %th Score
+      %th Follow
+    %tbody
+    - @stories.each do |story|
+      %tr
+        %td= link_to(story.title, story.url)
+        %td= story.score
+        %td
+          - if (user_story = story.user_stories.select {|us| us.user == @user }.first)
+            = link_to('Unwatch', user_story, data: { turbo_method: :delete }, method: :delete)
+          - else
+            = link_to('Watch story', user_stories_path(user_story: { user_id: @user.id, story_id: story.id }), method: 'post')

@@ -6,7 +6,7 @@ class FetchFeedJob < ApplicationJob
     outstanding_id_set = Set.new(ids)
     stories = Story.where(remote_id: ids)
     stories.each do |story|
-      outstanding_id_set.remove(story.remote_id)
+      outstanding_id_set.delete(story.remote_id)
     end
 
     hn = HackerNews.new

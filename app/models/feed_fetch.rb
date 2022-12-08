@@ -13,7 +13,7 @@ class FeedFetch < ApplicationRecord
       FetchFeedJob.perform_later(fetch)
     end
 
-    FeedFetch.where(in_progress: false).order("ID DESC").first
+    return FeedFetch.where(in_progress: false).order("ID DESC").first, self.in_progress?
   end
 
   def self.in_progress?
