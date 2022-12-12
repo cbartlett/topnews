@@ -105,10 +105,6 @@ GEM
     ffi (1.15.5)
     globalid (1.0.0)
       activesupport (>= 5.0)
-    haml (6.0.0)
-      temple (>= 0.8.2)
-      thor
-      tilt
     i18n (1.12.0)
       concurrent-ruby (~> 1.0)
     jbuilder (2.11.5)
@@ -237,7 +233,6 @@ GEM
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
     strscan (3.0.4)
-    temple (0.8.2)
     thor (1.2.1)
     tilt (2.0.11)
     timeout (0.3.0)
@@ -271,7 +266,6 @@ DEPENDENCIES
   capybara
   coffee-rails
   devise
-  haml
   jbuilder
   listen
   pg
