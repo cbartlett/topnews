@@ -15,6 +15,7 @@ gem 'pg'
 gem 'pry-rails'
 gem 'puma'
 gem 'rails', '~> 7.0.3'
+gem 'rails-controller-testing'
 gem 'rspec-rails'
 gem 'rubocop', group: :development
 gem 'sass-rails'

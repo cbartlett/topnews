@@ -16,4 +16,27 @@
     </div>
   </div>
 </nav>
-<h1 class="centered">Welcome to Top News</h1>
+
+<div class="container">
+  <h1 class="centered">Welcome to Top News</h1>
+
+  <div class="card">
+    <ul class="list-group list-group-flush">
+      <% @posts.each do |post| %>
+          <li class="list-group-item">
+            <div class="card-body">
+              <h5 class="card-title">
+              <%= post.url.nil? ? link_to(post.title, "https://news.ycombinator.com/item?id=#{post.hacker_news_post_id}") : link_to(post.title, post.url) %>
+              </h5>
+              <p class="card-text">
+                <%= post.score %> <%= post.score.to_i == 1 ? "point" : "points" %> by 
+                <%= post.by %> 
+                <%= time_ago_in_words(post.time) %> ago
+              </p>
+            <a href="#" class="btn btn-primary">Favorite</a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
