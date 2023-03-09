@@ -12,7 +12,7 @@
           <a class="nav-link" href="#">Favorites</a>
         </li>
       </ul>
-      <%= link_to "Sign out" %>
+      <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
     </div>
   </div>
 </nav>
