@@ -2,6 +2,7 @@
 
 Rails.application.routes.draw do
   resources :posts
+  resources :favorites, only: %i[create destroy]
   devise_for :users
   root to: 'posts#index'
 end

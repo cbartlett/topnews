@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class Post < ApplicationRecord
+  has_many :favorites, dependent: :destroy
+
   def update_hacker_news_post
     hn = HackerNews.new
     self.hacker_news_post_id = hn.story(hacker_news_post_id)['id']
