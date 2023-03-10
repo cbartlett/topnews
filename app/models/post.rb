@@ -2,6 +2,7 @@
 
 class Post < ApplicationRecord
   has_many :favorites, dependent: :destroy
+  has_many :users, through: :favorites
 
   def update_hacker_news_post
     hn = HackerNews.new
