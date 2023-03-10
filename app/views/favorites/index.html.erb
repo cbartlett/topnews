@@ -1,0 +1,58 @@
+<nav class="navbar navbar-expand-lg bg-light">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <%= link_to("Home", root_path, class: "nav-link active") %>
+        </li>
+        <li class="nav-item">
+          <%= link_to("Favorites", favorites_path, class: "nav-link") %>
+        </li>
+      </ul>
+      <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "btn btn-secondary" %>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <% if flash[:success] %>
+    <div class="alert alert-success" role="alert">
+      <%= flash[:success] %>
+    </div>
+  <% end %>
+
+  <h1 class="centered">Welcome to Top News</h1>
+
+  <div class="card">
+    <ul class="list-group list-group-flush">
+      <% @favorites.each do |favorite| %>
+          <li class="list-group-item">
+            <div class="card-body">
+              <h5 class="card-title">
+              <%= favorite.post.url.nil? ? link_to(favorite.post.title, "https://news.ycombinator.com/item?id=#{favorite.post.hacker_news_post_id}") : link_to(favorite.post.title, favorite.post.url) %>
+              </h5>
+              <p class="card-text">
+                <%= favorite.post.score %> <%= favorite.post.score.to_i == 1 ? "point" : "points" %>
+                <span>by</span> 
+                <%= favorite.post.by %> 
+                <%= time_ago_in_words(favorite.post.time) %>
+                <span>ago</span> 
+              </p>
+              <%= link_to("Unfavorite", favorite_path(favorite), method: :delete, class: "btn btn-danger") %>
+          </div>
+          </li>
+        <div class="card-footer text-muted">
+          <% if favorite.post.favorites.any? %>
+            <span>Favorited by: </span>
+              <% favorite.post.favorites.each do |favorite| %>
+                <%= favorite.user.full_name %>
+              <% end %> 
+            <% end %>
+        </div>
+      <% end %>
+    </ul>
+  </div>
+</div>
