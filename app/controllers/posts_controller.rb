@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   before_action :update_posts, only: %i[index]
 
   def index
-    @posts = Post.where(hacker_news_post_id: HackerNews.new.top_stories_ids.first(25))
+    @posts = Post.where(hacker_news_post_id: HackerNews.new.top_stories_ids.first(25)).includes(:favorites)
   end
 
   private
