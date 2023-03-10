@@ -32,7 +32,7 @@
           <li class="list-group-item">
             <div class="card-body">
               <h5 class="card-title">
-              <%= favorite.post.url.nil? ? link_to(favorite.post.title, "https://news.ycombinator.com/item?id=#{favorite.post.hacker_news_post_id}") : link_to(favorite.post.title, favorite.post.url) %>
+              <%= link_to(favorite.post.title, favorite.post.url) %>
               </h5>
               <p class="card-text">
                 <%= favorite.post.score %> <%= favorite.post.score.to_i == 1 ? "point" : "points" %>

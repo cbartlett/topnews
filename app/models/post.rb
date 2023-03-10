@@ -10,7 +10,15 @@ class Post < ApplicationRecord
     self.title = hn.story(hacker_news_post_id)['title']
     self.score = hn.story(hacker_news_post_id)['score']
     self.by = hn.story(hacker_news_post_id)['by']
-    self.url = hn.story(hacker_news_post_id)['url']
     self.time = Time.at(hn.story(hacker_news_post_id)['time'])
+    self.url = hacker_news_url(hn.story(hacker_news_post_id)['url'])
+  end
+
+  def hacker_news_url(url)
+    if url.nil?
+      "https://news.ycombinator.com/item?id=#{hacker_news_post_id}"
+    else
+      url
+    end
   end
 end
