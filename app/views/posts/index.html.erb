@@ -6,13 +6,13 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <%= link_to("Home", root_path, class: "nav-link active") %>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Favorites</a>
+          <%= link_to("Favorites", favorites_path, class: "nav-link") %>
         </li>
       </ul>
-      <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+      <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "btn btn-secondary" %>
     </div>
   </div>
 </nav>
@@ -33,7 +33,7 @@
                 <%= post.by %> 
                 <%= time_ago_in_words(post.time) %> ago
               </p>
-            <a href="#" class="btn btn-primary">Favorite</a>
+              <%= link_to("Favorite", favorites_path(user_id: current_user.id, post_id: post.id), method: :post, class: "btn btn-primary") %>
           </div>
         </li>
       <% end %>
