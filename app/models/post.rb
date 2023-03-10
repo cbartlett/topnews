@@ -13,10 +13,8 @@ class Post < ApplicationRecord
   end
 
   def hacker_news_url(url)
-    if url.nil?
-      "https://news.ycombinator.com/item?id=#{hacker_news_post_id}"
-    else
-      url
-    end
+    return url unless url.nil?
+
+    "https://news.ycombinator.com/item?id=#{hacker_news_post_id}"
   end
 end
