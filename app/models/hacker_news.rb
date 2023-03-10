@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class HackerNews
   include HTTParty
   base_uri 'https://hacker-news.firebaseio.com/v0'
