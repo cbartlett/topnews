@@ -18,7 +18,7 @@ RSpec.describe 'Favorites', type: :request do
   end
 
   describe '#create' do
-    before do 
+    before do
       sign_in(user)
       post favorites_path(user_id: user.id, post_id: post.id)
     end
