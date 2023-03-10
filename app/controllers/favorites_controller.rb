@@ -17,9 +17,11 @@ class FavoritesController < ApplicationController
   end
 
   def destroy
-    @favorites = Favorite.find_by(user_id: current_user.id)
+    @favorite = Favorite.find(params[:id])
 
-    if @favorites.destroy
+    authorize(@favorite)
+
+    if @favorite.destroy
       flash[:success] = 'Post deleted!'
     else
       flash[:error] = 'Post was not deleted!'

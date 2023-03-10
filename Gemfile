@@ -14,6 +14,7 @@ gem 'listen', group: :development
 gem 'pg'
 gem 'pry-rails'
 gem 'puma'
+gem 'pundit'
 gem 'rails', '~> 7.0.3'
 gem 'rails-controller-testing'
 gem 'rspec-rails'
