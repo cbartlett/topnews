@@ -18,24 +18,38 @@
 </nav>
 
 <div class="container">
+  <% if flash[:success] %>
+    <div class="alert alert-success" role="alert">
+      <%= flash[:success] %>
+    </div>
+  <% end %>
+
   <h1 class="centered">Welcome to Top News</h1>
 
   <div class="card">
     <ul class="list-group list-group-flush">
       <% @posts.each do |post| %>
-          <li class="list-group-item">
-            <div class="card-body">
-              <h5 class="card-title">
+        <li class="list-group-item">
+          <div class="card-body">
+            <h5 class="card-title">
               <%= post.url.nil? ? link_to(post.title, "https://news.ycombinator.com/item?id=#{post.hacker_news_post_id}") : link_to(post.title, post.url) %>
-              </h5>
-              <p class="card-text">
-                <%= post.score %> <%= post.score.to_i == 1 ? "point" : "points" %> by 
-                <%= post.by %> 
-                <%= time_ago_in_words(post.time) %> ago
-              </p>
-              <%= link_to("Favorite", favorites_path(user_id: current_user.id, post_id: post.id), method: :post, class: "btn btn-primary") %>
+            </h5>
+            <p class="card-text">
+              <%= post.score %> <%= post.score.to_i == 1 ? "point" : "points" %> 
+              <span>by</span> <%= post.by %> 
+              <%= time_ago_in_words(post.time) %> <span>ago</span> 
+            </p>
+            <%= link_to("Favorite", favorites_path(user_id: current_user.id, post_id: post.id), method: :post, class: "btn btn-primary") %>
           </div>
         </li>
+        <% if post.favorites.any? %>
+          <div class="card-footer text-muted">
+            <span>Favorited by: </span>
+            <% post.favorites.each do |favorite| %>
+              <%= favorite.user.full_name %>
+            <% end %> 
+          </div>
+        <% end %>
       <% end %>
     </ul>
   </div>
