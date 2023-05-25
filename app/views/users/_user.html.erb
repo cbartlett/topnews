@@ -1,0 +1,6 @@
+<div class="comments">
+  <%= link_to user.name, user %>
+  <% if current_user.try(:admin?) && !current_user?(user) %>
+       <%= link_to "Destroy", admin_destroy_user_path(user), method: :delete, data: { confirm: "You sure?" } %>
+  <% end %>
+</div>
