@@ -1,8 +1,7 @@
 <h1><%= @article.title %></h1>
 
-<%= link_to "top stories", articles_url%>
-<%= link_to "liked articles", liked_articles_url%>
-<%= link_to "read article", @article.url%>
+
+<%= link_to 'read the article', @article.url%>
 
 <% if user_signed_in?  %> 
     <% if !(@users_toggle.nil?)  %>
@@ -21,8 +20,9 @@
 <p>
   <ul>
     <% if !@article.user_articles.empty?  %>
+        <h3>Users who liked this article</h3>
         <% for user_article in @article.user_articles  %>
-        <li><%= user_article.user.first_name %></li>
+          <li><%= user_article.user.first_name + " " + user_article.user.last_name%></li>
         <% end  %>
     <%else%>
     <li>No Likes</li>

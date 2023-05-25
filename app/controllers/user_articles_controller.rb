@@ -7,16 +7,9 @@ class UserArticlesController < ApplicationController
         @article = Article.find_by(:article_id => params[:id])
 
         if @article.nil?
-            @article = Article.new()
-            response = RestClient.get("https://hacker-news.firebaseio.com/v0/item/" + params[:id].to_s + ".json")
-            @article.title = JSON.parse(response)['title']
-            @article.author = JSON.parse(response)['by']
-            @article.score = JSON.parse(response)['score']
-            @article.url = JSON.parse(response)['url']
-            @article.article_id = params[:id]
+            @article = HackerNews.get_details(params[:id])
             if @article.save
-                flash[:notice] = "Successfully liked the article"
-
+                #flash[:notice] = "Successfully liked the article"
                 @user_article.article = @article
                 @user_article.user = current_user
                 if @user_article.save
