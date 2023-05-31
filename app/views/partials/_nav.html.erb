@@ -1,0 +1,20 @@
+<nav id="nav">
+  <div class="container">
+    <ul class="left hide-on-med-and-down">
+      <li><%= link_to 'Top Stores', articles_url %></li>
+
+      <% if user_signed_in? %>
+        <li class="nav-item">
+            <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'nav-link' %>
+        </li>
+        <% else %>
+        <li class="nav-item">
+            <%= link_to 'Sign In', new_user_session_path, class: 'nav-link' %>
+        </li>
+        <li class="nav-item">
+            <%= link_to 'Register', new_user_registration_path, class: 'nav-link' %>
+        </li>
+    <% end %>
+    </ul>
+  </div>
+</nav>

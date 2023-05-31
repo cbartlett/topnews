@@ -1,0 +1,31 @@
+<h1><%= @article.title %></h1>
+
+
+<%= link_to 'read the article', @article.url%>
+
+<% if user_signed_in?  %> 
+    <% if !(@users_toggle.nil?)  %>
+        <% if !(@users_toggle.include?(current_user))  %>
+            <%= link_to 'like',like_path(id:@article.article_id), method: :patch%>
+            <%else%>  
+            <%= link_to 'unlike',unlike_path(id:@article.article_id), method: :patch%>
+            <% end  %>
+    <%else%>  
+        <%= link_to 'like',like_path(id:@article.article_id), method: :patch%>
+        <% end  %>
+<%else%>  
+    <p>please sign in to like articles</p>
+    <% end  %>
+
+<p>
+  <ul>
+    <% if !@article.user_articles.empty?  %>
+        <h3>Users who liked this article</h3>
+        <% for user_article in @article.user_articles  %>
+          <li><%= user_article.user.first_name + " " + user_article.user.last_name%></li>
+        <% end  %>
+    <%else%>
+    <li>No Likes</li>
+    <% end -%> </td>
+  </ul>
+</p>

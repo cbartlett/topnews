@@ -1,0 +1,32 @@
+<h2>Liked Articles</h2>
+
+<table class="striped highlight">
+<thead>
+    <th>Title</th>
+    <th>Author</th>
+    <th>Score</th>
+    <th>Likes</th>
+</thead>
+<% for article in @liked_articles %>
+    
+        <tr class="<%= cycle('dg_list_line_odd', 'dg_list_line_even') %>">
+
+        <td><%= link_to article.title, article_path(article.article_id) %></td>
+        
+        <td><%= article.author %></td>
+
+        <td><%= article.score %></td>
+
+        <% article.user_articles %>
+        <td> <%if !article.user_articles&.present?%>
+            <%= 0 %>
+            <%else%>  
+            <%= article.user_articles.map { |ua| ua.user }.count  %>
+        <% end -%> </td>
+        
+
+        <td class="align_center">
+        
+        </tr>
+     <% end %>
+</table>
