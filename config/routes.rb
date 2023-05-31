@@ -7,8 +7,10 @@ Rails.application.routes.draw do
 
   devise_for :users
   devise_scope :user do
+    # root to: "articles#index"
     get '/users/sign_out' => 'devise/sessions#destroy'
     post '/users/sign_up' => 'devise/registrations#create'
+    match '/sessions/user', to: 'devise/sessions#create', via: :post
   end
 
   # get '/articles', to: "articles#index"
