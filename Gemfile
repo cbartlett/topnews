@@ -6,6 +6,7 @@ gem 'byebug', platforms: [:mri, :mingw, :x64_mingw], group: [:development, :test
 gem 'capybara', group: [:development, :test]
 gem 'coffee-rails'
 gem 'devise'
+gem 'faraday'
 gem 'jbuilder'
 gem 'listen', group: :development
 gem 'pg'
@@ -20,3 +21,4 @@ gem 'turbolinks'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'uglifier'
 gem 'web-console', group: :development
+gem 'whenever', require: false
