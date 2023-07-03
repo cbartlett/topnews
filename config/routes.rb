@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'pages#home'
+
+  devise_scope :user do
+    root 'devise/sessions#new'
+  end
+
+  resources :stories, only: [:show, :index] do
+    post 'picked'
+  end
 end

@@ -1,0 +1,8 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @story %>
+
+<div>
+  <%= button_to "Pick story", story_picked_path(@story), params: { id: @story } %> |
+  <%= link_to "Back to stories", stories_path %>
+</div>

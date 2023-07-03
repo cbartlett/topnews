@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Welcome to Top News</h1>
+<%= button_to "logout", destroy_user_session_path, method: :delete  %>
+
+<div id="stories">
+  <% @stories.each do |story| %>
+    <%= render story %>
+    <p>
+      <%= link_to "Show this story", story %>
+    </p>
+  <% end %>
+</div>
+
+
+

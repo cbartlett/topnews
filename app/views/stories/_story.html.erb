@@ -1,0 +1,31 @@
+<div id="<%= dom_id story %>">
+  <p>
+    <strong>Title:</strong>
+    <%= story.title %>
+  </p>
+
+  <p>
+    <strong>Author:</strong>
+    <%= story.author %>
+  </p>
+
+  <p>
+    <strong>External:</strong>
+    <%= story.external_id %>
+  </p>
+
+  <p>
+    <strong>Time:</strong>
+    <%= story.time %>
+  </p>
+
+  <h4> Users who picked this story </h4>
+  
+  <div> 
+    <% story.users.each do |user| %>
+      <%= user.first_name %>
+      <%= user.last_name %>
+    <% end %>
+  </div>
+
+</div>
