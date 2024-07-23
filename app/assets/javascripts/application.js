@@ -13,3 +13,23 @@
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
+
+function starArticle(el, id) {
+  fetch(`/users_articles`, {
+    method: 'POST',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',
+      'X-CSRF-Token': window.topnews.form_token
+    },
+    body: JSON.stringify({
+      article_id: id
+    })
+  }).then(res => res.json() ).then((json) => {
+    if (json.liked) {
+      el.className = "article__star article__star--selected";
+      return;
+    }
+    el.className = "article__star";
+  });
+}

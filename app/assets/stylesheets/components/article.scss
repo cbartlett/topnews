@@ -1,0 +1,21 @@
+.article {
+  &__star {
+    height: 2em;
+    cursor: pointer;
+
+    &--selected {
+      filter: invert(.5) sepia(1) saturate(5) hue-rotate(175deg);
+    }
+  }
+  &__title {
+    font-size: 1.3em;
+  }
+  &__container {
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+  }
+  &__by-line {
+    margin: 0;
+  }
+}

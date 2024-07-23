@@ -1,0 +1,22 @@
+<h1>Welcome to Top News</h1>
+<%= paginate @articles %>
+<br />
+<% @articles.each do |article| %>
+  <div class="article__container">
+    <div>
+      <%= image_tag 'star', class: star_classes(article, current_user), onclick: "starArticle(this, #{article.id})" %>
+    </div>
+    <div>
+      <a class="article__title" href="<%= article.url%>">
+        <%= article.title %>
+      </a>
+      <p class="article__by-line">
+        Published by <%= article.by %> on <%= article.time.strftime("%b %d, %Y") %>
+      </p>
+      <% if article.users.length > 0 %>
+        <p class="article__by-line">Liked by: <%= article_liked_by(article) %></p>
+      <% end %>
+    </div>
+  </div>
+<% end %>
+<%= paginate @articles %>
